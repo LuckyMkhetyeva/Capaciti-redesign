@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+<style>
+   
+    /* Existing styles... */
+html body {
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+ 
+
+    /* Existing styles... */
+
+    body {
+        background-image: url('background.png'); /* Use the image in the same folder */
+        background-size: cover; /* Cover the entire viewport */
+        background-position: center; /* Center the background */
+        background-repeat: no-repeat; /* Prevent repeating */
+    }
+    /* Partners Section Styles */
+    #partnersContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .partner-logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+    .partner-logo-container:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .partner-logo {
+        max-height: 60px;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    .fallback-text {
+        font-size: 0.9rem;
+        color: #6c757d;
+        font-weight: 600;
+    }
+
+    /* History and Timeline Section Styles */
+    #history-timeline .timeline {
+        position: relative;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+    #history-timeline .timeline ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: relative;
+    }
+    #history-timeline .timeline ul::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 4px;
+        background: #0d6efd;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+    #history-timeline .timeline ul li {
+        position: relative;
+        width: 50%;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+        cursor: default;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    #history-timeline .timeline ul li:nth-child(odd) {
+        left: 0;
+        text-align: right;
+    }
+    #history-timeline .timeline ul li:nth-child(even) {
+        left: 50%;
+        text-align: left;
+    }
+    #history-timeline .timeline ul li::before {
+        content: '';
+        position: absolute;
+        top: 1.5rem;
+        width: 20px;
+        height: 20px;
+        background: #0d6efd;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px #f8f9fa;
+        transition: background-color 0.3s ease;
+        z-index: 1;
+    }
+    #history-timeline .timeline ul li:nth-child(odd)::before {
+        right: -10px;
+    }
+    #history-timeline .timeline ul li:nth-child(even)::before {
+        left: -10px;
+    }
+    #history-timeline .timeline ul li:hover,
+    #history-timeline .timeline ul li:focus-within {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
+        border-radius: 0.5rem;
+        background-color: #e9f0ff;
+    }
+    #history-timeline .timeline ul li h4 {
+        font-weight: 700;
+        color: #0d6efd;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+    }
+    #history-timeline .timeline ul li p {
+        color: #495057;
+        margin-bottom: 0;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+        #history-timeline .timeline {
+            padding-left: 1rem;
+            border-left: 2px solid #6c757d;
+        }
+        #history-timeline .timeline ul li::before {
+            left: -0.75rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            top: 0.6rem;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" onclick="scrollToTop()">
+                <div class="logo-container">
+<img src="logo.png" alt="CAPACITI Logo" class="logo-img">
+                    <div class="logo-fallback gradient-space-kadet rounded d-none">
+                        <span class="text-white fw-bold font-space">C</span>
+                    </div>
+                </div>
+                <span class="ms-3 fs-4 fw-bold text-secondary font-space">CAPACITI</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">
+        About
+    </a>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="about.html#our-story">Our Story</a></li>
+        <li><a class="dropdown-item" href="about.html#mission-vision">Mission & Vision</a></li>
+        <li><a class="dropdown-item" href="about.html#our-team">Our Team</a></li>
+        <li><a class="dropdown-item" href="about.html#our-impact">Our Impact</a></li>
+        <li><a class="dropdown-item" href="#history-timeline">History &amp; Timeline</a></li>
+        <li><a class="dropdown-item" href="about.html#partners">Partners</a></li>
+    </ul>
+</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Programmes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#programmes">All Programmes</a></li>
+                            <li><a class="dropdown-item" href="#programmes">Full Stack Development</a></li>
+                            <li><a class="dropdown-item" href="#programmes">Data Science</a></li>
+                            <li><a class="dropdown-item" href="#programmes">UX/UI Design</a></li>
+                            <li><a class="dropdown-item" href="#programmes">Digital Marketing</a></li>
+                            <li><a class="dropdown-item" href="#programmes">Cloud Computing</a></li>
+                            <li><a class="dropdown-item" href="#programmes">Cybersecurity</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="#events">News & Events</a></li>
+                            <li><a class="dropdown-item" href="#opportunities">Career Support</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person me-2"></i>Work With Us
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#opportunities"><i class="bi bi-mortarboard me-2"></i>Apply Now</a></li>
+                            <li><a class="dropdown-item" href="#sponsors"><i class="bi bi-building me-2"></i>Become a Sponsor</a></li>
+                            <li><a class="dropdown-item" href="#vacancies"><i class="bi bi-briefcase me-2"></i>View Vacancies</a></li>
+                        </ul>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="gradient-space-kadet text-white position-relative overflow-hidden">
+        
+        <div class="container position-relative py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center py-5">
+                    
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                        <a href="#opportunities" class="btn gradient-salmon text-white btn-lg px-5 py-3">
+                            Work With Us
+                        </a>
+                        <button class="btn btn-outline-light btn-lg px-5 py-3" data-bs-toggle="modal" data-bs-target="#learnMoreModal">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+               
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">About CAPACITI</h2>
+                <p class="lead fs-4 text-muted">
+                    CAPACITI is a division of the Technology Innovation Agency, dedicated to building South Africa's digital economy by developing world-class tech talent and fostering innovation across communities.
+                </p>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card gradient-purple text-white h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-target text-white fs-2 me-3"></i>
+                                <h3 class="card-title font-space mb-0">Our Mission</h3>
+                            </div>
+                            <p class="card-text fs-5">
+                                To accelerate careers in technology by providing comprehensive training, mentorship, and employment opportunities that bridge the skills gap in South Africa's digital economy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card gradient-salmon text-white h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-eye text-white fs-2 me-3"></i>
+                                <h3 class="card-title font-space mb-0">Our Vision</h3>
+                            </div>
+                            <p class="card-text fs-5">
+                                To be the leading catalyst for digital transformation in Africa, creating sustainable pathways for underrepresented communities to thrive in the technology sector.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="mb-5">
+                <h3 class="display-5 fw-bold text-center text-secondary mb-5 font-space">Meet Our Team</h3>
+                <div class="row g-4" id="teamContainer">
+                    <!-- Team members will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Partners Section -->
+            <div class="text-center">
+                <h3 class="display-5 fw-bold text-secondary mb-5 font-space">Our Partners & Funders</h3>
+                <div class="row g-3" id="partnersContainer">
+                    <!-- Partners will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History and Timeline Section -->
+    <section id="history-timeline" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">History &amp; Timeline</h2>
+                <p class="lead fs-5 text-muted">
+                    CAPACITI, part of the UVU Africa Group, was established in 2010 as a digital talent accelerator in South Africa, focusing on training and placing unemployed youth into tech careers. It is known for its work in developing digital skills and preparing individuals for the evolving digital economy.
+                </p>
+            </div>
+            <div class="timeline">
+                <ul class="list-unstyled">
+                    <li class="mb-4">
+                        <h4 class="fw-bold text-secondary">2010</h4>
+                        <p class="text-muted mb-0">CAPACITI is founded as a digital career accelerator by the Cape Innovation and Technology Initiative (CiTi).</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fw-bold text-secondary">2018</h4>
+                        <p class="text-muted mb-0">CAPACITI scaled its operations to include Johannesburg, alongside Cape Town, to support youth and businesses.</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fw-bold text-secondary">2020</h4>
+                        <p class="text-muted mb-0">CAPACITI began a year-long program with phased approaches, including internship phases with companies like Centrax Systems.</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fw-bold text-secondary">2021</h4>
+                        <p class="text-muted mb-0">CAPACITI, in partnership with the City of Cape Town, launched a program focused on software development and programming languages.</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fw-bold text-secondary">2024</h4>
+                        <p class="text-muted mb-0">UVU Africa announced a new Advanced Technical Academy in Braamfontein, focusing on DevOps, Java, and Data Analytics, with intensive training and career-critical skills development.</p>
+                    </li>
+                    <li class="mb-4">
+                        <h4 class="fw-bold text-secondary">2025 (May)</h4>
+                        <p class="text-muted mb-0">CAPACITI highlighted the critical role of tech talent in Africa's e-commerce success, emphasizing the growing tech skills gap.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">Our Impact</h2>
+                <p class="lead fs-4 text-muted">
+                    Transforming lives and communities through technology education. See the real impact we're making across South Africa's digital landscape.
+                </p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="row g-4 mb-5" id="metricsContainer">
+                <!-- Metrics will be populated by JavaScript -->
+            </div>
+
+            <!-- Success Stories -->
+            <div class="mb-5">
+                <h3 class="display-5 fw-bold text-center text-secondary mb-5 font-space">Success Stories</h3>
+                <div class="row g-5" id="successStoriesContainer">
+                    <!-- Success stories will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="card gradient-pink">
+                <div class="card-body p-5 text-center">
+                    <h3 class="display-5 fw-bold text-secondary mb-5 font-space">What Our Stakeholders Say</h3>
+                    <blockquote class="blockquote fs-3 text-secondary mb-4">
+                        "CAPACITI has been instrumental in helping us find skilled, job-ready developers. Their graduates consistently exceed our expectations and integrate seamlessly into our teams."
+                    </blockquote>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="gradient-space-kadet rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 64px; height: 64px;">
+                            <span class="text-white fw-bold fs-4">JD</span>
+                        </div>
+                        <div class="text-start">
+                            <div class="fw-bold fs-5 text-secondary">John Davies</div>
+                            <div class="text-muted">CTO, InnovateTech Solutions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Programmes Section -->
+    <section id="programmes" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">Our Programmes</h2>
+                <p class="lead fs-4 text-muted">
+                    Comprehensive training programmes designed to equip you with in-demand tech skills and connect you with leading employers in the industry.
+                </p>
+            </div>
+ 
+            <!-- Programme Filters -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="programmeFilters">
+                <!-- Filters will be populated by JavaScript -->
+            </div>
+ 
+            <!-- Programme Cards -->
+            <div class="row g-4" id="programmesContainer">
+                <!-- Programmes will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">Latest Insights</h2>
+                <p class="lead fs-4 text-muted">
+                    Stay updated with the latest trends in technology, career development, and industry insights from our experts and community.
+                </p>
+            </div>
+
+            <div class="row g-4 mb-5" id="blogContainer">
+                <!-- Blog posts will be populated by JavaScript -->
+            </div>
+
+            <div class="text-center">
+                <button class="btn btn-outline-primary btn-lg">
+                    View All Blog Posts <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">News & Events</h2>
+                <p class="lead fs-4 text-muted">
+                    Stay connected with our community through upcoming events, workshops, and the latest news from CAPACITI.
+                </p>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div class="mb-5">
+                <h3 class="h2 fw-bold text-secondary mb-4 font-space">Upcoming Events</h3>
+                <div class="row g-4" id="eventsContainer">
+                    <!-- Events will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Recent News -->
+            <div>
+                <h3 class="h2 fw-bold text-secondary mb-4 font-space">Latest News</h3>
+                <div class="row g-4" id="newsContainer">
+                    <!-- News will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <!-- Removed locations section from main content as per request -->
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">Partner With CAPACITI</h2>
+                <p class="lead fs-4 text-muted">
+                    Join leading companies in shaping South Africa's tech future. Our sponsorship partnerships provide access to skilled talent, brand visibility, and the opportunity to make a meaningful impact.
+                </p>
+            </div>
+
+            <!-- Impact Metrics -->
+            <div class="row g-4 mb-5" id="sponsorMetricsContainer">
+                <!-- Sponsor metrics will be populated by JavaScript -->
+            </div>
+
+            <!-- Sponsorship Tiers -->
+            <div class="mb-5">
+                <h3 class="display-5 fw-bold text-center text-secondary mb-5 font-space">Sponsorship Opportunities</h3>
+                <div class="row g-4" id="sponsorshipTiersContainer">
+                    <!-- Sponsorship tiers will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Partnership Benefits -->
+            <div class="card gradient-space-kadet text-white mb-5">
+                <div class="card-body p-5">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <h3 class="display-5 fw-bold mb-4 font-space">Why Partner With Us?</h3>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-check-circle text-success fs-4 me-3 mt-1"></i>
+                                        <div>
+                                            <div class="fw-bold">Access to Top Talent</div>
+                                            <div class="text-light">First access to our skilled graduates</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-check-circle text-success fs-4 me-3 mt-1"></i>
+                                        <div>
+                                            <div class="fw-bold">Brand Visibility</div>
+                                            <div class="text-light">Showcase your commitment to skills development</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-check-circle text-success fs-4 me-3 mt-1"></i>
+                                        <div>
+                                            <div class="fw-bold">Social Impact</div>
+                                            <div class="text-light">Drive transformation in South African communities</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-start">
+                                        <i class="bi bi-check-circle text-success fs-4 me-3 mt-1"></i>
+                                        <div>
+                                            <div class="fw-bold">Custom Solutions</div>
+                                            <div class="text-light">Tailored programmes to meet your specific needs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                                 alt="Partnership collaboration" class="img-fluid rounded shadow mb-4">
+                            <a href="#contact" class="btn gradient-salmon text-white btn-lg">
+                                <i class="bi bi-arrow-right me-2"></i>Become a Partner Today
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Partners -->
+            <div class="text-center">
+                <h3 class="display-5 fw-bold text-secondary mb-4 font-space">Our Current Partners</h3>
+                <p class="text-muted mb-4">Join these leading organizations in developing South Africa's tech talent</p>
+                <div class="row g-3" id="currentPartnersContainer">
+                    <!-- Current partners will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vacancies Section -->
+    <section id="vacancies" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">Join Our Team</h2>
+                <p class="lead fs-4 text-muted">
+                    Build your career with CAPACITI and help shape the future of tech education in South Africa.
+                </p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search jobs by title or keyword..." id="jobSearch">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="categoryFilter">
+                                <option value="all">All Categories</option>
+                                <option value="management">Management</option>
+                                <option value="training">Training & Education</option>
+                                <option value="marketing">Digital Marketing</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select" id="locationFilter">
+                                <option value="all">All Locations</option>
+                                <option value="cape-town">Cape Town</option>
+                                <option value="johannesburg">Johannesburg</option>
+                                <option value="durban">Durban</option>
+                                <option value="gqeberha">Gqeberha</option>
+                                <option value="remote">Remote</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Summary -->
+            <div class="mb-4">
+                <p class="text-muted" id="jobResults">Showing 6 of 6 available positions</p>
+            </div>
+
+            <!-- Job Listings -->
+            <div id="jobListingsContainer">
+                <!-- Job listings will be populated by JavaScript -->
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-5">
+                <div class="card gradient-salmon text-white">
+                    <div class="card-body p-5">
+                        <h3 class="h2 fw-bold mb-3">Don't See the Perfect Role?</h3>
+                        <p class="fs-5 mb-4">We're always interested in hearing from talented individuals. Send us your CV and let us know how you'd like to contribute to our mission.</p>
+                        <a href="#contact" class="btn btn-light text-dark">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Opportunities Section -->
+    <section id="opportunities" class="py-5 gradient-purple text-white">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="display-3 fw-bold mb-4 font-space">Ready to Transform Your Career?</h2>
+                    <p class="lead fs-3 mb-5">
+                        Join thousands who have successfully launched their tech careers with CAPACITI. Explore our current opportunities and take the first step towards your future.
+                    </p>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="card bg-white bg-opacity-10 border-0 h-100">
+                                <div class="card-body p-4 text-center">
+                                    <i class="bi bi-mortarboard text-warning" style="font-size: 3rem;"></i>
+                                    <h3 class="h2 fw-bold my-3">Student Applications</h3>
+                                    <p class="mb-4">Apply for our intensive training programmes and start your journey into the tech industry with comprehensive support and mentorship.</p>
+                                    <button class="btn gradient-salmon text-white btn-lg" onclick="window.open('https://capaciti.breezy.hr/positions/student-applications', '_blank')">
+                                        Apply as Student
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card bg-white bg-opacity-10 border-0 h-100">
+                                <div class="card-body p-4 text-center">
+                                    <i class="bi bi-handshake text-warning" style="font-size: 3rem;"></i>
+                                    <h3 class="h2 fw-bold my-3">Partner With Us</h3>
+                                    <p class="mb-4">Join our network of partner companies and gain access to skilled, job-ready tech talent while supporting community development.</p>
+                                    <button class="btn btn-outline-light btn-lg" onclick="window.open('https://capaciti.breezy.hr/positions/partnership-opportunities', '_blank')">
+                                        Become a Partner
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main CTA -->
+                    <div class="card bg-white bg-opacity-20 border-0">
+                        <div class="card-body p-5">
+                            <h3 class="display-6 fw-bold mb-3 font-space">View All Opportunities</h3>
+                            <p class="fs-4 mb-4">Explore current openings, application deadlines, and requirements through our comprehensive opportunities portal.</p>
+                            <button class="btn gradient-salmon text-white btn-lg px-5" onclick="window.open('https://capaciti.breezy.hr', '_blank')">
+                                <i class="bi bi-box-arrow-up-right me-2"></i>Visit Opportunities Portal
+                            </button>
+                            <p class="text-light mt-3 mb-0">
+                                <i class="bi bi-info-circle me-1"></i>Powered by Breezy HR - External application system
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold text-secondary mb-4 font-space">Get In Touch</h2>
+                <p class="lead fs-4 text-muted">
+                    Have questions about our programmes or want to learn more? We'd love to hear from you. Reach out to our team today.
+                </p>
+            </div>
+
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card shadow-lg">
+                        <div class="card-body p-5">
+                            <h3 class="h2 fw-bold text-secondary mb-4 font-space">Send us a Message</h3>
+                            <form id="contactForm">
+                                <div class="row g-3 mb-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name *</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name *</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                               
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                               
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                               
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select class="form-select" id="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="programme-inquiry">Programme Inquiry</option>
+                                        <option value="partnership">Partnership Opportunity</option>
+                                        <option value="general">General Question</option>
+                                        <option value="media">Media Inquiry</option>
+                                        <option value="support">Technical Support</option>
+                                    </select>
+                                </div>
+                               
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="6" required placeholder="Tell us more about your inquiry..."></textarea>
+                                </div>
+                               
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        I'd like to receive updates about CAPACITI programmes and opportunities
+                                    </label>
+                                </div>
+                               
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading d-none">
+                                        <span class="spinner-border spinner-border-sm me-2"></span>Sending...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                        <div class="mb-3">
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="message" rows="6" required placeholder="Tell us more about your inquiry..."></textarea>
+                                </div>
+                                
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        I'd like to receive updates about CAPACITI programmes and opportunities
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading d-none">
+                                        <span class="spinner-border spinner-border-sm me-2"></span>Sending...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Information -->
+                <div class="col-lg-5">
+                    <div class="h-100 d-flex flex-column gap-4">
+                        <!-- Contact Details -->
+                        <div class="card shadow-lg h-100">
+                            <div class="card-body p-4">
+                                <h3 class="h2 fw-bold text-secondary mb-4 font-space">Contact Information</h3>
+                                <div class="d-flex flex-column gap-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-primary text-white rounded d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                            <i class="bi bi-geo-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="fw-bold text-secondary mb-1">Office Address</h4>
+                                            <p class="text-muted mb-0">
+                                                Greenacres, Gqeberha, 6001<br>
+                                                Eastern Cape, South Africa
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-warning text-dark rounded d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                            <i class="bi bi-telephone"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="fw-bold text-secondary mb-1">Phone</h4>
+                                            <p class="text-muted mb-0">+27 (0) 21 003 7509</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-success text-white rounded d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                            <i class="bi bi-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="fw-bold text-secondary mb-1">Email</h4>
+                                            <p class="text-muted mb-0">hello@capaciti.org.za</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-start">
+                                        <div class="bg-info text-white rounded d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+                                            <i class="bi bi-globe"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="fw-bold text-secondary mb-1">Website</h4>
+                                            <p class="text-muted mb-0">www.capaciti.org.za</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Office Location Map -->
+                        <div class="card shadow-lg">
+                            <div class="card-body p-4">
+                                <h3 class="h2 fw-bold text-secondary mb-3 font-space">Find Us</h3>
+                                <div class="position-relative rounded overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=200" 
+                                         alt="Office building" class="w-100" style="height: 180px; object-fit: cover;">
+                                    <div class="position-absolute top-50 start-50 translate-middle">
+                                        <button class="btn btn-light" onclick="openMap()">
+                                            <i class="bi bi-geo-alt me-2"></i>View Interactive Map
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="text-muted small mt-3 mb-0">
+                                    <i class="bi bi-info-circle me-1"></i>Click to open detailed directions in Google Maps
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="card shadow-lg">
+                            <div class="card-body p-4">
+                                <h3 class="h2 fw-bold text-secondary mb-3 font-space">Follow Us</h3>
+                                <div class="d-flex gap-3" id="socialLinksContainer">
+                                    <!-- Social links will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-S5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Info -->
+                <div class="col-lg-3">
+                <div class="d-flex align-items-center mb-4">
+                    <img src="" alt="CAPACITI Logo" class="logo-img" onerror="showFallbackLogo(this)">
+                    <div class="gradient-space-kadet rounded d-none" style="width: 48px; height: 48px;">
+                        <span class="text-white fw-bold fs-4 font-space d-flex align-items-center justify-content-center h-100">C</span>
+                    </div>
+                    <span class="h3 fw-bold font-space mb-0">CAPACITI</span>
+                </div>
+                    <p class="text-light mb-4">
+                        Accelerating tech careers and transforming lives through innovative training programmes and industry partnerships.
+                    </p>
+                    <div class="d-flex gap-3" id="footerSocialLinks">
+                        <!-- Social links will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2">
+                    <h4 class="h5 fw-bold mb-3 font-space">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#impact" class="text-light text-decoration-none">Our Impact</a></li>
+                        <li><a href="#programmes" class="text-light text-decoration-none">Programmes</a></li>
+                        <li><a href="#blog" class="text-light text-decoration-none">Blog</a></li>
+                        <li><a href="#events" class="text-light text-decoration-none">Events</a></li>
+                        <li><a href="#contact" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Locations -->
+                <div class="col-lg-3">
+                    <h4 class="h5 fw-bold mb-3 font-space">Locations</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="locations.html" class="text-light text-decoration-none">Our Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-4">
+                    <h4 class="h5 fw-bold mb-3 font-space">Stay Updated</h4>
+                    <p class="text-light mb-3">
+                        Subscribe to our newsletter for the latest updates on programmes, events, and opportunities.
+                    </p>
+                    <form id="newsletterForm" class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email" id="newsletterEmail" required>
+                            <button class="btn btn-primary" type="submit">
+                                <span class="btn-text">Subscribe</span>
+                                <span class="btn-loading d-none">
+                                    <span class="spinner-border spinner-border-sm"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Locations moved to footer -->
+               
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="btn btn-primary rounded-circle position-fixed d-none" style="bottom: 2rem; right: 6rem; width: 48px; height: 48px; z-index: 1050;">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Chatbot -->
+    <div id="chatbot" class="position-fixed" style="bottom: 2rem; right: 1rem !important; z-index: 1050;">
+        <button id="chatbotToggle" class="btn btn-primary rounded-circle" style="width: 56px; height: 56px;">
+            <i class="bi bi-chat-dots"></i>
+        </button>
+        
+        <div id="chatbotContainer" class="card shadow-lg d-none" style="width: 320px; height: 400px;">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-robot me-2"></i>
+                    <span class="fw-bold">CAPACITI Assistant</span>
+                </div>
+                <button class="btn btn-sm text-white" id="chatbotClose">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
+            <div class="card-body p-3 d-flex flex-column">
+                <div id="chatMessages" class="flex-grow-1 overflow-auto mb-3">
+                    <div class="d-flex mb-3">
+                        <div class="bg-light rounded p-2 small">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-robot me-2 mt-1"></i>
+                                <span>Hello! I'm the CAPACITI assistant. How can I help you today? I can provide information about our programmes, application process, or answer general questions.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="quickReplies" class="mb-3">
+                    <p class="small text-muted mb-2">Quick questions:</p>
+                    <div class="d-flex flex-wrap gap-1">
+                        <button class="btn btn-outline-primary btn-sm quick-reply">Tell me about programmes</button>
+                        <button class="btn btn-outline-primary btn-sm quick-reply">How do I apply?</button>
+                        <button class="btn btn-outline-primary btn-sm quick-reply">Contact information</button>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Type your message..." id="chatInput">
+                    <button class="btn btn-primary" id="chatSend">
+                        <i class="bi bi-send"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learn More Modal -->
+    <div class="modal fade" id="learnMoreModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-space fw-bold">About CAPACITI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="bg-light rounded d-flex align-items-center justify-content-center" style="height: 250px;">
+                                <div class="text-center">
+                                    <i class="bi bi-play-circle text-primary" style="font-size: 4rem;"></i>
+                                    <p class="text-muted mt-2">Watch Our Story</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="fw-bold text-secondary">Our Mission</h4>
+                            <p class="text-muted">
+                                CAPACITI is dedicated to building South Africa's digital economy by developing world-class tech talent and fostering innovation across communities.
+                            </p>
+                            <h4 class="fw-bold text-secondary">What We Offer</h4>
+                            <ul class="text-muted">
+                                <li><i class="bi bi-check text-success me-2"></i>Comprehensive training programmes</li>
+                                <li><i class="bi bi-check text-success me-2"></i>Industry mentorship</li>
+                                <li><i class="bi bi-check text-success me-2"></i>Job placement assistance</li>
+                                <li><i class="bi bi-check text-success me-2"></i>Ongoing career support</li>
+                            </ul>
+                            <a href="#programmes" class="btn btn-primary" data-bs-dismiss="modal">
+                                Explore Programmes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
