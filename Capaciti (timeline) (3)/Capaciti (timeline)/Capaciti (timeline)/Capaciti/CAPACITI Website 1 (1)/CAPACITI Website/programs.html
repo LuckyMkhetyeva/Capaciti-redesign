@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Programmes - CAPACITI</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center" href="index.html" onclick="scrollToTop()">
+<div class="logo-container">
+<img src="/logo.png" alt="CAPACITI Logo" class="logo-img" onerror="showFallbackLogo(this)">
+<div class="logo-fallback gradient-space-kadet rounded d-none">
+<span class="text-white fw-bold font-space">C</span>
+</div>
+</div>
+<span class="ms-3 fs-4 fw-bold text-secondary font-space">CAPACITI</span>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">
+                            About
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="about.html#our-story">Our Story</a></li>
+<li><a class="dropdown-item" href="about.html#mission-vision">Mission & Vision</a></li>
+<li><a class="dropdown-item" href="about.html#our-team">Our Team</a></li>
+<li><a class="dropdown-item" href="about.html#our-impact">Our Impact</a></li>
+<li><a class="dropdown-item" href="about.html#partners">Partners</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="programs.html" role="button" data-bs-toggle="dropdown">
+                            Programmes
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="programs.html#all-programmes">All Programmes</a></li>
+<li><a class="dropdown-item" href="programs.html#full-stack">Full Stack Development</a></li>
+<li><a class="dropdown-item" href="programs.html#data-science">Data Science</a></li>
+<li><a class="dropdown-item" href="programs.html#ux-ui">UX/UI Design</a></li>
+<li><a class="dropdown-item" href="programs.html#digital-marketing">Digital Marketing</a></li>
+<li><a class="dropdown-item" href="programs.html#cloud-computing">Cloud Computing</a></li>
+<li><a class="dropdown-item" href="programs.html#cybersecurity">Cybersecurity</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="resources.html" role="button" data-bs-toggle="dropdown">
+                            Resources
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="resources.html#blog">Blog</a></li>
+<li><a class="dropdown-item" href="resources.html#news-events">News & Events</a></li>
+<li><a class="dropdown-item" href="resources.html#career-support">Career Support</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="contact.html">Contact</a>
+</li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<div class="dropdown">
+<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+<i class="bi bi-person me-2"></i>Work With Us
+</button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="work-with-us.html#apply-now"><i class="bi bi-mortarboard me-2"></i>Apply Now</a></li>
+<li><a class="dropdown-item" href="work-with-us.html#become-sponsor"><i class="bi bi-building me-2"></i>Become a Sponsor</a></li>
+<li><a class="dropdown-item" href="work-with-us.html#view-vacancies"><i class="bi bi-briefcase me-2"></i>View Vacancies</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+
+    <!-- Programmes Section -->
+<section id="all-programmes" class="py-5 bg-light">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="display-4 fw-bold text-secondary mb-4 font-space">Our Programmes</h2>
+<p class="lead fs-4 text-muted">
+                    Comprehensive training programmes designed to equip you with in-demand tech skills and connect you with leading employers in the industry.
+</p>
+</div>
+ 
+            <!-- Programme Filters -->
+<div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="programmeFilters">
+<!-- Filters will be populated by JavaScript -->
+</div>
+ 
+            <!-- Programme Cards -->
+<div class="row g-4" id="programmesContainer">
+<!-- Programmes will be populated by JavaScript -->
+</div>
+</div>
+</section>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
